@@ -31,5 +31,5 @@ class Rainhas:
             if(conflitos == 0):
                 auxiliar = copy.deepcopy(matriz)
                 vetor.append(auxiliar)
-            matriz[linha][coluna] = "X"
+            matriz[linha][coluna] = "x"
             return vetor
