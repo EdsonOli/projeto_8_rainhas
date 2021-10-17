@@ -10,7 +10,7 @@ class Busca:
         while(True):
             Auxiliar.imprimirMatriz(self, borda[0].estado)
             if(problema.teste_obsetivo(borda[0])):
-                print("Profundidade total:", bord[0].profundidade)
+                print("Profundidade total:", borda[0].profundidade)
                 return Auxiliar.caminhos(self,  borda[0])
             filhos = Auxiliar.expande(self, borda[0], problema)
             borda.pop(0)

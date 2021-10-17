@@ -1,5 +1,5 @@
 import copy
-import Auxiliar
+from Auxiliar import Auxiliar
 
 class Rainhas:
     estado_inicial = []
