@@ -4,10 +4,10 @@ class Auxiliar:
     def detecta_ameacas(self, matriz, linha, coluna):
         contador = 0
         for linAux in range(len(matriz)):
-            if(matriz[linAux][coluna] == matriz[linha][[coluna]]):
+            if(matriz[linAux][coluna] == matriz[linha][coluna]):
                 contador += 1
             for c in range(len(matriz)):
-                if(matriz[linha][c] == matriz[linha][coluna]):
+                if(matriz[linAux][c] == matriz[linha][coluna]):
                     contador += 1
 
         colAux = coluna
@@ -47,10 +47,17 @@ class Auxiliar:
 
     def expande(self, no, problema):
         filhos = []
-        possibilidades = problema.acao(no)
+        possibilidades = problema.acoes(no)
         if (possibilidades != []):
             for no in range(len(possibilidades)):
                 no_filho = No()
-                no_filho.__init__(possibilidades[no].estado, no, no.custo, no.profundidade + 1)
+                no_filho._init_(possibilidades[no].estado, no, no.custo, no.profundidade + 1)
                 filhos.append(no_filho)
         return filhos
+
+    def imprimir_matriz(self, matriz):
+        for i in range(len(matriz)):
+            for j in range(len(matriz)):
+                print(matriz[i][j], end="")
+            print()
+        print("\n")

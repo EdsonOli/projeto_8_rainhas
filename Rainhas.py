@@ -27,7 +27,7 @@ class Rainhas:
         coluna = no.profundidade
         for linha in range(len(matriz)):
             matriz[linha][coluna] = "Q"
-            conflitos = Auxiliar.detectaAmeacas(self, matriz, linha, coluna)
+            conflitos = Auxiliar.detecta_ameacas(self, matriz, linha, coluna)
             if(conflitos == 0):
                 auxiliar = copy.deepcopy(matriz)
                 vetor.append(auxiliar)

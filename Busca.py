@@ -1,18 +1,20 @@
+
 from Auxiliar import Auxiliar
 from No import No
 
+
 class Busca:
-    def busca_em_largura(self, problema, no):
+    def busca_em_largura(self, problema):
         borda = []
         Nos = No()
-        Nos._init_(problema.estado_iniicial, None, 0, 0)
+        Nos._init_(problema.estado_inicial, None, 0, 0)
         borda.insert(0, Nos)
         while(True):
-            Auxiliar.imprimirMatriz(self, borda[0].estado)
-            if(problema.teste_obsetivo(borda[0])):
+            Auxiliar.imprimir_matriz(self, borda[0].estado)
+            if(problema.teste_objetivo(borda[0]) == True):
                 print("Profundidade total:", borda[0].profundidade)
-                return Auxiliar.caminhos(self,  borda[0])
+                return Auxiliar.caminhos(self, borda[0])
             filhos = Auxiliar.expande(self, borda[0], problema)
             borda.pop(0)
-            for filho in range(filhos):
+            for filho in range(len(filhos)):
                 borda.append(filhos[filho])
