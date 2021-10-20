@@ -51,7 +51,7 @@ class Auxiliar:
         if (possibilidades != []):
             for no in range(len(possibilidades)):
                 no_filho = No()
-                no_filho._init_(possibilidades[no].estado, no, no.custo, no.profundidade + 1)
+                no_filho._init_(possibilidades[no], no, 0, 0)
                 filhos.append(no_filho)
         return filhos
 
