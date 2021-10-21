@@ -7,14 +7,16 @@ class Auxiliar:
             if(matriz[linAux][coluna] == matriz[linha][coluna]):
                 contador += 1
             for c in range(len(matriz)):
-                if(matriz[linAux][c] == matriz[linha][coluna]):
-                    contador += 1
+                if(linha == linAux):
+                    if(matriz[linha][c] == matriz[linha][coluna]):
+                        contador += 1
 
         colAux = coluna
         for linAux in range(linha, len(matriz), 1):
-            if(matriz[linAux][colAux] == matriz[linha][coluna]):
-                contador += 1
-            colAux += 1
+            if(colAux != len(matriz)):
+                if(matriz[linAux][colAux] == matriz[linha][coluna]):
+                    contador += 1
+                colAux += 1
         
         colAux = coluna
         for linAux in range(linha, -1, -1):
@@ -35,7 +37,7 @@ class Auxiliar:
             if(colAux != len(matriz)):
                 if(matriz[linAux][colAux] == matriz[linha][coluna]):
                     contador += 1
-                c += 1
+                colAux += 1
         return (contador - 6)
 
     def caminhos(self, no):
@@ -49,9 +51,9 @@ class Auxiliar:
         filhos = []
         possibilidades = problema.acoes(no)
         if (possibilidades != []):
-            for no in range(len(possibilidades)):
+            for i in range(len(possibilidades)):
                 no_filho = No()
-                no_filho._init_(possibilidades[no], no, 0, 0)
+                no_filho._init_(possibilidades[i], no, no.custo, no.profundidade + 1)
                 filhos.append(no_filho)
         return filhos
 

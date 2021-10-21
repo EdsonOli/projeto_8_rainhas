@@ -24,12 +24,12 @@ class Rainhas:
     def acao(self, no):
         vetor = []
         matriz = no.estado
-        coluna = no.profundidade
-        for linha in range(len(matriz)):
+        linha = no.profundidade
+        for coluna in range(len(matriz)):
             matriz[linha][coluna] = "Q"
             conflitos = Auxiliar.detecta_ameacas(self, matriz, linha, coluna)
             if(conflitos == 0):
                 auxiliar = copy.deepcopy(matriz)
                 vetor.append(auxiliar)
             matriz[linha][coluna] = "X"
-            return vetor
+        return vetor
