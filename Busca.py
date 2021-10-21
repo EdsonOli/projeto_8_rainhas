@@ -7,7 +7,7 @@ class Busca:
     def busca_em_largura(self, problema):
         borda = []
         Nos = No()
-        Nos._init_(problema.estado_inicial, None, 0, 0)
+        Nos._init_(problema.estado_inicial, None, 0)
         borda.insert(0, Nos)
         while(True):
             Auxiliar.imprimir_matriz(self, borda[0].estado)

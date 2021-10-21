@@ -53,13 +53,13 @@ class Auxiliar:
         if (possibilidades != []):
             for i in range(len(possibilidades)):
                 no_filho = No()
-                no_filho._init_(possibilidades[i], no, no.custo, no.profundidade + 1)
+                no_filho._init_(possibilidades[i], no, no.profundidade + 1)
                 filhos.append(no_filho)
         return filhos
 
     def imprimir_matriz(self, matriz):
         for i in range(len(matriz)):
             for j in range(len(matriz)):
-                print(matriz[i][j], end="")
+                print(matriz[i][j], end=" ")
             print()
         print("\n")
